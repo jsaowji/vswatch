@@ -1,0 +1,8 @@
+[project]
+name = "vswatch"
+version = "0.0.1"
+
+dependencies = [
+    "vsengine",
+    "vstools"
+]

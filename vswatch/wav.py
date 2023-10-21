@@ -173,6 +173,7 @@ class WavFile:
 
             self.node = audio
             self.fetch_buffer_size = 1024 * 32
+            self.is_24bit = self.node.bits_per_sample == 24
 
     def read(self, offset,size):
         origsize = size
@@ -207,7 +208,7 @@ class WavFile:
                     vs_frame = self.node.get_frame(vs_frame_idx)
 
                     bufer = io.BytesIO()
-                    finish_frame_audio(vs_frame, bufer, False)#audio.bits_per_sample == 24)
+                    finish_frame_audio(vs_frame, bufer, self.is_24bit)
 
                     bufer = bufer.getvalue()
                     dedda = bufer

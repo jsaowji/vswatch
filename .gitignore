@@ -1,4 +1,4 @@
 __pycache__/
-tmp/
+.tmp/
 build/
 *.egg-info
